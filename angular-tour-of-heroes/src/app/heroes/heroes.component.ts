@@ -5,7 +5,7 @@ import { HEROES } from '../mock-heroes';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
-  styleUrls: ['./heroes.component.css']
+  styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
   heroes = HEROES;
@@ -18,6 +18,10 @@ export class HeroesComponent implements OnInit {
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
+  }
+
+  funNewName(nombre: String): void {
+    console.log(nombre)
   }
 
 }
