@@ -9,6 +9,7 @@ import { HeroDetailComponent } from './components/hero-detail/hero-detail.compon
 import { LabelComponent } from './components/label/label.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
+import { MessagesComponent } from './components/messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     HeroesComponent,
     HeroDetailComponent,
     LabelComponent,
+    MessagesComponent,
   ],
   imports: [
     BrowserModule,
