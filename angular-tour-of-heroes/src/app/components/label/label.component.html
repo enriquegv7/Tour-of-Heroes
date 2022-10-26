@@ -1,12 +1,12 @@
 <div class="label">
     <div>
-        <span class="label_text">{{text}}</span>
+        <!-- <span class="label_text">{{text}}</span> -->
         <span>*</span>
     </div>
     <div>
         <input id="labelInput"
          name="labelInput"
          [ngModel]="text"
-         (ngModelChange)="addNewItem($event)">
+         (ngModelChange)="onChangeText($event)">
     </div>
 </div>
