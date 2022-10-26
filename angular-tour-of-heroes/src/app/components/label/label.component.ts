@@ -7,7 +7,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
-  @Input() text?: string;
+  @Input() text: string;
   @Output() textChange = new EventEmitter<string>();
 
   constructor() { }

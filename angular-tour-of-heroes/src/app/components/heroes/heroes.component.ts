@@ -11,26 +11,26 @@ import { UserService } from '../../services/user.service';
 })
 export class HeroesComponent implements OnInit {
   heroes = HEROES;
-  selectedHero?: Hero;
-  users?: User[];
+  selectedHero: Hero;
+  users: User[];
 
   constructor(private userService: UserService) { }
 
   ngOnInit() {
-    this.getUsers();
+    // this.getUsers();
     // this.getUsersPromise();
-    // this.getUsersPromiseAsync();
+    this.getUsersPromiseAsync();
   }
 
   onSelect(hero: Hero): void{
     this.selectedHero = hero;
   }
 
-  getUsers(): void {
-    this.userService.getUsers().subscribe(data => {
-      this.users = data;
-    });
-  }
+  // getUsers(): void {
+  //   this.userService.getUsers().subscribe(data => {
+  //     this.users = data;
+  //   });
+  // }
 
   // getUsersPromise(): void {
   //   this.userService.getUsersPromise().then(data => {
@@ -38,8 +38,8 @@ export class HeroesComponent implements OnInit {
   //   });
   // }
 
-  // async getUsersPromiseAsync(): Promise<void> {
-  //   this.users = await this.userService.getUsersPromiseAsync();
-  // }
+  async getUsersPromiseAsync(): Promise<void> {
+    this.users = await this.userService.getUsersPromiseAsync();
+  }
 
 }

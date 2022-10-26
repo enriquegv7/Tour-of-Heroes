@@ -14,11 +14,9 @@
     <ul class="users">
         <li *ngFor="let user of users">
             <!-- <app-label [(text)]="user.name"></app-label> -->
-            <div>{{user?.name}}</div>
-            <div>{{user?.id}}</div>
-            <div>{{user?.phone}}</div>
-            <div>{{user?.email}}</div>
-            <div>{{user?.website}}</div>
+            <div>{{user.name}}</div>
+            <div>{{user.id}}</div>
+            <div>{{user.phone}}</div>
         </li>
     </ul>
 </div>
