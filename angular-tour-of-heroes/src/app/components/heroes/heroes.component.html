@@ -10,10 +10,17 @@
                 <app-label [(text)]="hero.name"></app-label>
             </button>
           </a>
+          <div>
+            <label for="new-hero">Hero name: </label>
+            <input id="new-hero" #heroName />
+            <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
+            <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+          </div>
         </li>
     </ul>
 </div>
 <div>
+  
 </div>
 <!-- <div>
     <ul class="users">
