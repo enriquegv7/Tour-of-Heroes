@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MessagesComponent } from './components/messages/messages.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
+import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { HeroSearchComponent } from './components/hero-search/hero-search.compon
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
+    HeroTypeComponent,
   ],
   imports: [
     BrowserModule,

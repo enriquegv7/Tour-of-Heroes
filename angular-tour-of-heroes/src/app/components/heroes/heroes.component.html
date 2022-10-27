@@ -1,27 +1,25 @@
 <h2>My Heroes </h2>
 <div>
-    <ul class="heroes">
-        <li *ngFor="let hero of heroes">
-          <a routerLink="/detail/{{hero.id}}">
-            <button type="button"  [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
-                <span class="badge">{{hero.id}}</span>
-                <span class="name">{{hero.name}}</span>
-                <span *ngIf="hero.typeId">{{heroTypeNames[hero.typeId]}}</span>
-                <app-label [(text)]="hero.name"></app-label>
-            </button>
-          </a>
-          <div>
-            <label for="new-hero">Hero name: </label>
-            <input id="new-hero" #heroName />
-            <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">Add hero</button>
-            <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
-          </div>
-        </li>
-    </ul>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
 </div>
 <div>
-  
+  <ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+          <span class="badge">{{hero.id}}</span>
+          <span class="name">{{hero.name}}</span>
+          <span *ngIf="hero.typeId">{{heroTypeNames[hero.typeId]}}</span>
+          <app-label [(text)]="hero.name"></app-label>
+      </a>
+      <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+    </li>
+  </ul>
 </div>
+
 <!-- <div>
     <ul class="users">
         <li *ngFor="let user of users">
@@ -32,4 +30,3 @@
         </li>
     </ul>
 </div> -->
-
