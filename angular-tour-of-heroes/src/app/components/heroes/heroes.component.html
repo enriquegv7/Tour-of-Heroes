@@ -2,22 +2,27 @@
 <div>
     <ul class="heroes">
         <li *ngFor="let hero of heroes">
+          <a routerLink="/detail/{{hero.id}}">
             <button type="button"  [class.selected]="hero === selectedHero" (click)="onSelect(hero)">
                 <span class="badge">{{hero.id}}</span>
                 <span class="name">{{hero.name}}</span>
+                <span *ngIf="hero.typeId">{{heroTypeNames[hero.typeId]}}</span>
                 <app-label [(text)]="hero.name"></app-label>
             </button>
+          </a>
         </li>
     </ul>
 </div>
 <div>
+</div>
+<!-- <div>
     <ul class="users">
         <li *ngFor="let user of users">
-            <!-- <app-label [(text)]="user.name"></app-label> -->
+            <app-label [(text)]="user.name"></app-label>
             <div>{{user.name}}</div>
             <div>{{user.id}}</div>
             <div>{{user.phone}}</div>
         </li>
     </ul>
-</div>
-<app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div> -->
+

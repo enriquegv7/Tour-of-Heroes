@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TypeProvider } from '@angular/core';
 import { HeroService } from 'src/app/services/hero.service';
 import { MessageService } from 'src/app/services/message.service';
 import { Hero } from '../../hero';
 import { HEROES } from '../../mock-heroes';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
+import { heroTypeNames } from '../../constants/hero.constants';
 
 @Component({
   selector: 'app-heroes',
@@ -15,6 +16,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero: Hero;
   users: User[];
+  heroTypeNames = heroTypeNames;
 
   constructor(
     private userService: UserService, 

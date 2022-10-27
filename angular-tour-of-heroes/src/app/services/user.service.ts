@@ -27,4 +27,3 @@ export class UserService {
     // return firstValueFrom(this.http.get<User[]>(url).toPromise());
   }
 }
-
