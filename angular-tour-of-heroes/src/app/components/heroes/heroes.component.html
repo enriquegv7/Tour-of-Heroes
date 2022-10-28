@@ -11,22 +11,20 @@
     <li *ngFor="let hero of heroes">
       <a routerLink="/detail/{{hero.id}}">
           <span class="badge">{{hero.id}}</span>
-          <span class="name">{{hero.name}}</span>
-          <span *ngIf="hero.typeId">{{heroTypeNames[hero.typeId]}}</span>
-          <app-label [(text)]="hero.name"></app-label>
+          <span class="name">{{hero.name}}</span>-
+          <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+          <!-- <app-label [(text)]="hero.name"></app-label> -->
       </a>
       <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
     </li>
   </ul>
+  <ul class="users">
+    <li *ngFor="let user of users">
+        <!-- <app-label [(text)]="user.name"></app-label> -->
+        <!-- <app-label [(text)]="user.name"></app-label> -->
+        <div>{{user.name}}</div>
+        <div>{{user.id}}</div>
+        <div>{{user.phone}}</div>
+    </li>
+</ul>
 </div>
-
-<!-- <div>
-    <ul class="users">
-        <li *ngFor="let user of users">
-            <app-label [(text)]="user.name"></app-label>
-            <div>{{user.name}}</div>
-            <div>{{user.id}}</div>
-            <div>{{user.phone}}</div>
-        </li>
-    </ul>
-</div> -->

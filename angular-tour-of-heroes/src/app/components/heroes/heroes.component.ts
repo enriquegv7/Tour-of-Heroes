@@ -5,7 +5,6 @@ import { Hero } from '../../hero';
 import { HEROES } from '../../mock-heroes';
 import { User } from '../../models/user.model';
 import { UserService } from '../../services/user.service';
-import { heroTypeNames } from '../../constants/hero.constants';
 
 @Component({
   selector: 'app-heroes',
@@ -14,10 +13,9 @@ import { heroTypeNames } from '../../constants/hero.constants';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
-  selectedHero: Hero;
+  // selectedHero: Hero;
   users: User[];
-  heroTypeNames = heroTypeNames;
-
+  
   constructor(
     private userService: UserService, 
     private heroService: HeroService,
@@ -31,14 +29,15 @@ export class HeroesComponent implements OnInit {
     this.getHeroes();
   }
 
-  onSelect(hero: Hero): void{
-    this.selectedHero = hero;
-    this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
-  }
+  // onSelect(hero: Hero): void{
+  //   this.selectedHero = hero;
+  //   this.messageService.add(`HeroesComponent: Selected hero id = ${hero.id}`);
+  // }
 
   getHeroes(): void {
     this.heroService.getHeroes().subscribe(heroes => 
     this.heroes = heroes);
+    console.log(this.heroes);
   }
 
   // getUsers(): void {

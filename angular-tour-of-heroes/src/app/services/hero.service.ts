@@ -28,6 +28,12 @@ export class HeroService {
       return of(result as T);
     }
   }
+
+  // getHeroes(): Observable<Hero[]> {
+  //   const heroes = of(HEROES);
+  //   this.messageService.add('HeroService: fetched heroes');
+  //   return heroes;
+  // }
   
   getHeroes(): Observable<Hero[]> {
     return this.http.get<Hero[]>(this.heroesUrl)

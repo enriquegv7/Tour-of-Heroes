@@ -22,8 +22,7 @@ export class UserService {
   // }
 
   getUsersPromiseAsync(): Promise<User[]> {
-    const url = 'https://jsonplaceholder.typicode.com/users';
+    const url = 'api/users';
     return firstValueFrom(this.http.get<User[]>(url));
-    // return firstValueFrom(this.http.get<User[]>(url).toPromise());
   }
 }
