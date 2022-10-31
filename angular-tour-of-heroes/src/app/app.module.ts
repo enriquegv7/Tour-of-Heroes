@@ -17,6 +17,7 @@ import { MessagesComponent } from './components/messages/messages.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
+import { ToDosComponent } from './components/to-dos/to-dos.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { HeroTypeComponent } from './components/hero-type/hero-type.component';
     DashboardComponent,
     HeroSearchComponent,
     HeroTypeComponent,
+    ToDosComponent,
   ],
   imports: [
     BrowserModule,

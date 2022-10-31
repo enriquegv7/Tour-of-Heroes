@@ -1,0 +1,11 @@
+
+<h2>To Do </h2>
+<div class="toDo" >
+  <div class="toDo-card" *ngFor="let toDo of toDos" [ngClass]="[toDo.completed === false ? 'toDo-card' : 'toDo-card-completed']">
+    <div class="toDo-card-style">
+      <span class="title" *ngIf="toDo.userId == 1 || toDo.userId == 2">{{userTypeNames[toDo.userId]}}</span>
+      <span>Tarea id : {{toDo.id}}</span>
+      <span class="body">{{toDo.title}}</span>
+    </div>
+  </div>
+</div>

@@ -18,13 +18,12 @@
       <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
     </li>
   </ul>
-  <ul class="users">
+  <ul class="heroes">
     <li *ngFor="let user of users">
         <!-- <app-label [(text)]="user.name"></app-label> -->
-        <!-- <app-label [(text)]="user.name"></app-label> -->
-        <div>{{user.name}}</div>
+        <span>{{user.name}}</span>
         <div>{{user.id}}</div>
         <div>{{user.phone}}</div>
     </li>
-</ul>
+  </ul>
 </div>
