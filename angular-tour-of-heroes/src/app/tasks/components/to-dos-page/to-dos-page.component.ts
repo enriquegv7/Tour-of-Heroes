@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ToDo } from 'src/app/models/toDo.model';
-import { TodoService } from 'src/app/services/todo.service';
-import { userTypeNames, userType} from 'src/app/constants/user.constants';
+import { ToDo } from 'src/app/tasks/models/toDo.model';
+import { TodoService } from 'src/app/shared/services/todo.service';
+import { userTypeNames, userType} from 'src/app/tasks/constants/user.constants';
 
 @Component({
   selector: 'app-to-dos',

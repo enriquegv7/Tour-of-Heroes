@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
-import { Hero } from './hero';
+import { Hero } from './heroes/models/hero.model';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +18,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { id: 19, name: 'Magma', typeId: 1 },
       { id: 20, name: 'Tornado', typeId: 1 }
     ];
+
     const toDos = [
       { userId: 1, id: 1, title: 'delectus aut autem', completed: false },
       { userId: 1, id: 2, title: 'quis ut nam facilis et officia qui', completed: false },
@@ -30,6 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
       { userId: 3, id: 43, title: 'tempore ut sint quis recusandae', completed: true },
       { userId: 4, id: 61, title: 'odit optio omnis qui sunt', completed: true },
     ];
+    
     const users = [
       { id: 1, name: 'Leanne Graham', username: 'Bret', phone: '1-770-736-8031 x56442' },
       { id: 2, name: 'Ervin Howell', username: 'Antonette', phone: '010-692-6593 x09125' },

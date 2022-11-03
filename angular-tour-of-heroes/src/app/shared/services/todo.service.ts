@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, firstValueFrom, Observable, of, tap } from 'rxjs';
-import { ToDo } from '../models/toDo.model';
+import { ToDo } from '../../tasks/models/toDo.model';
 import { MessageService } from './message.service';
 
 @Injectable({

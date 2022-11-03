@@ -14,19 +14,10 @@
 <h2>To Do </h2>
 <div class="to-do" >
   <div class="to-do_card" *ngFor="let toDo of toDos" [ngClass]="[toDo.completed === false ? 'to-do_card' : 'to-do_card_completed']">
-    <app-task 
-    [userId]="toDo.userId"
-    [id]="toDo.id"
-    [title]="toDo.title"></app-task>
+    <app-task [userId]="toDo.userId"
+              [id]="toDo.id"
+              [title]="toDo.title"
+    ></app-task>
   </div>
 </div>
-
  
-<!-- <div>
-  añadir page -----
-  quitar suscribe -----
-  to-do-card quitar width
-  poner constantes en el ngIf -----
-  espacio antes de cada llave -----
-  ordenar scss BEM -----
-</div> -->

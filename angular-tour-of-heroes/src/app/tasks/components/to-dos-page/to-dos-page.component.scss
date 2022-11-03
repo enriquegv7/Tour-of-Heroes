@@ -6,13 +6,12 @@
   justify-content: space-between;
   gap: 15px 0;
   &_card {
-    width: 30%;
-    height: 50px;
+    width: 33%;
+    height: 100px;
     padding: 15px;
+    box-sizing: border-box;
     background-color: rgb(255, 198, 198);
     color: black;
-    margin-left: 1px;
-    margin-bottom: 1px;
     border-style: solid;
     border-color: black;
     border-width: 0.5px;
