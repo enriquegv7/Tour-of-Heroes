@@ -1,0 +1,7 @@
+
+<div class="card-style">
+    <span class="card-style_title" *ngIf="userId == userType.ADMIN || userId == userType.MOD">{{userTypeNames[userId]}}</span>
+    <span>Tarea id : {{id}}</span>
+    <span class="card-style_body">{{title}}</span>
+  </div>
+

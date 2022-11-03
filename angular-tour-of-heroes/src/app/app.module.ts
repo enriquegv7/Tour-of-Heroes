@@ -18,7 +18,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroSearchComponent } from './components/hero-search/hero-search.component';
 import { HeroTypeComponent } from './components/hero-type/hero-type.component';
 import { ToDosComponent } from './components/to-dos-page/to-dos-page.component';
-import { ToDoTaskComponent } from './components/to-do-task/to-do-task.component';
+import { TaskComponent } from './components/task/task.component';
 
 
 @NgModule({
@@ -32,7 +32,7 @@ import { ToDoTaskComponent } from './components/to-do-task/to-do-task.component'
     HeroSearchComponent,
     HeroTypeComponent,
     ToDosComponent,
-    ToDoTaskComponent,
+    TaskComponent,
   ],
   imports: [
     BrowserModule,
