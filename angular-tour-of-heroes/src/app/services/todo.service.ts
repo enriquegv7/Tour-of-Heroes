@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, Observable, of, tap } from 'rxjs';
+import { catchError, firstValueFrom, Observable, of, tap } from 'rxjs';
 import { ToDo } from '../models/toDo.model';
 import { MessageService } from './message.service';
 
@@ -28,11 +28,15 @@ export class TodoService {
     }
   }
 
-  getToDos(): Observable<ToDo[]> {
-    return this.http.get<ToDo[]>(this.toDosUrl)
-      .pipe(
-        tap(_ => this.log('fetched To-Dos')),
-        catchError(this.handleError<ToDo[]>('getToDos', []))
-      );
+  getToDos(): Promise<ToDo[]> {
+    // return this.http.get<ToDo[]>(this.toDosUrl)
+    //   .pipe(
+    //     tap(_ => this.log('fetched To-Dos')),
+    //     catchError(this.handleError<ToDo[]>('getToDos', []))
+    //   );
+    return firstValueFrom(this.http.get<ToDo[]>(this.toDosUrl)
+    .pipe(
+      tap(_ => this.log('fetched To-Dos')),
+      catchError(this.handleError<ToDo[]>('getToDos', []))))
   }
 }

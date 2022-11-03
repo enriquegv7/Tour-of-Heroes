@@ -1,0 +1,10 @@
+
+.card-style {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  &_body {
+    font-style: italic;
+  }
+}

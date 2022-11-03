@@ -9,5 +9,6 @@ const userTypeNames = {
 };
 
 export {
+  userType,
   userTypeNames
 };

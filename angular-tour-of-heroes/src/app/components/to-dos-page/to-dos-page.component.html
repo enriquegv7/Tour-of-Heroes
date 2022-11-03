@@ -1,0 +1,29 @@
+<div class="to-do-page">
+<h2>To Do </h2>
+<div class="to-do" >
+  <div class="to-do_card" *ngFor="let toDo of toDos" [ngClass]="[toDo.completed ? 'to-do_card_completed' : 'to-do_card']">
+    <div class="to-do_card_style">
+      <span class="to-do_card_style_title" *ngIf="toDo.userId == userType.ADMIN || toDo.userId == userType.MOD">{{userTypeNames[toDo.userId]}}</span>
+      <span>Tarea id : {{toDo.id}}</span>
+      <span class="to-do_card_style_body">"{{toDo.title}}"</span>
+    </div>
+  </div>
+</div>
+
+
+<h2>To Do </h2>
+<div class="to-do" >
+  <div class="to-do_card" *ngFor="let toDo of toDos" [ngClass]="[toDo.completed === false ? 'to-do_card' : 'to-do_card_completed']">
+    <app-to-do-task [toDo]="toDo"></app-to-do-task>
+  </div>
+</div>
+
+ 
+<!-- <div>
+  añadir page -----
+  quitar suscribe -----
+  to-do-card quitar width
+  poner constantes en el ngIf -----
+  espacio antes de cada llave -----
+  ordenar scss BEM -----
+</div> -->
