@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
+import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -12,8 +12,8 @@ import { HeroDetailComponent } from './heroes/components/hero-detail/hero-detail
 import { LabelComponent } from './heroes/components/label/label.component';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { MessagesComponent } from './heroes/components/messages/messages.component';
-import { DashboardComponent } from './heroes/components/dashboard/dashboard.component';
+import { MessagesComponent } from './shared/components/messages/messages.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { HeroSearchComponent } from './heroes/components/hero-search/hero-search.component';
 import { HeroTypeComponent } from './heroes/components/hero-type/hero-type.component';
 import { TasksModule } from './tasks/tasks.module';

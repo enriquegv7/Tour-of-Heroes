@@ -2,7 +2,7 @@ import { Component, OnInit, TypeProvider } from '@angular/core';
 import { HeroService } from 'src/app/shared/services/hero.service';
 import { MessageService } from 'src/app/shared/services/message.service';
 import { Hero } from '../../models/hero.model';
-import { HEROES } from '../../../mock-heroes';
+import { HEROES } from '../../../shared/mocks/mock-heroes';
 import { User } from '../../models/user.model';
 import { UserService } from '../../../shared/services/user.service';
 
