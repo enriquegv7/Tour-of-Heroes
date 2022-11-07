@@ -21,6 +21,7 @@ export class HeroesComponent implements OnInit {
   users: User[];
   newHero = new Hero();
   submitted = false;
+  display: boolean = false;
   
   constructor(
     private userService: UserService, 
@@ -80,6 +81,15 @@ export class HeroesComponent implements OnInit {
   onSubmitHero(): void{
     this.add(this.newHero.name);
     this.createHeroForm.resetForm();
+    this.display = false;
   }
 
+  cancelModal(): void{
+    this.display = false;
+  }
+
+  showPopUp() {
+    this.display = true;
+    // this.createHeroForm.resetForm();
+  }
 }

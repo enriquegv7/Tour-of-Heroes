@@ -20,6 +20,9 @@ import { TasksModule } from './tasks/tasks.module';
 import { SharedModule } from './shared/shared.module';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeroesModule } from './heroes/heroes.module';
+import { AccordionModule } from 'primeng/accordion';
+import { DialogModule } from 'primeng/dialog';  
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';      
 
 
 
@@ -44,7 +47,10 @@ import { HeroesModule } from './heroes/heroes.module';
       InMemoryDataService, {dataEncapsulation: false }
     ),
     SharedModule,
-    HeroesModule
+    HeroesModule,
+    AccordionModule,
+    DialogModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

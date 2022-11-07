@@ -1,5 +1,17 @@
 <h2>My Heroes </h2>
-<div class="container">
+<div>
+  <p-dialog header="Añadir Nuevo Heroe" [(visible)]="display" [modal]="true" [transitionOptions]="'0ms'">
+    <div>
+      <form id="heroesCreateForm" name="heroesCreateForm" #createHeroForm="ngForm" (ngSubmit)="onSubmitHero()">
+        <label for="new-hero">Hero name : </label>
+        <input id="new-hero" name="new-hero" required [(ngModel)]="newHero.name" />
+        <button type="submit" class="add-button" [disabled] = "createHeroForm.invalid">Add hero</button>
+      </form>
+    </div>
+  </p-dialog>
+  <button type="button" (click)="showPopUp()" icon="pi pi-times" label="Show">Add hero</button>
+</div>
+<!-- <div class="container">
   <div [hidden]="submitted">
     <h1>Hero Form</h1>
     <form #createHeroForm="ngForm" (ngSubmit)="onSubmitHero()">
@@ -14,7 +26,7 @@
       <button type="submit" class="btn btn-default" [disabled]="createHeroForm.invalid">New Hero</button>
     </form>
   </div>
-</div>
+</div> -->
 <div>
   <ul class="heroes">
     <li *ngFor="let hero of heroes">
