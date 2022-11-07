@@ -5,6 +5,9 @@ import { Hero } from '../../models/hero.model';
 import { HEROES } from '../../../shared/mocks/mock-heroes';
 import { User } from '../../models/user.model';
 import { UserService } from '../../../shared/services/user.service';
+import { heroTypeNames } from '../../constants/hero.constants';
+import { FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-heroes',
@@ -14,13 +17,23 @@ import { UserService } from '../../../shared/services/user.service';
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
   // selectedHero: Hero;
+  name = 'hero';
   users: User[];
+  newHero = new Hero();
+  submitted = false;
   
   constructor(
     private userService: UserService, 
     private heroService: HeroService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private formBuilder: FormBuilder
     ) { }
+
+  checkoutForm = this.formBuilder.group(
+    {
+      name: ['', Validators.required],
+    }
+  );
 
   ngOnInit() {
     // this.getUsers();
@@ -69,5 +82,14 @@ export class HeroesComponent implements OnInit {
     this.heroes = this.heroes.filter(h => h !== hero);
     this.heroService.deleteHero(hero.id).subscribe();
   }
+
+  onClickAddHero(): void{
+    this.add(this.newHero.name);
+    this.newHero.name = '';
+  }
+
+  onSubmit() { this.submitted = true; }
+
+  
 
 }

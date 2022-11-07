@@ -18,8 +18,9 @@ import { HeroSearchComponent } from './heroes/components/hero-search/hero-search
 import { HeroTypeComponent } from './heroes/components/hero-type/hero-type.component';
 import { TasksModule } from './tasks/tasks.module';
 import { SharedModule } from './shared/shared.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeroesModule } from './heroes/heroes.module';
+
 
 
 @NgModule({
@@ -31,8 +32,7 @@ import { HeroesModule } from './heroes/heroes.module';
     MessagesComponent,
     DashboardComponent,
     HeroSearchComponent,
-    HeroTypeComponent,
-
+    HeroTypeComponent
   ],
   imports: [
     TasksModule,

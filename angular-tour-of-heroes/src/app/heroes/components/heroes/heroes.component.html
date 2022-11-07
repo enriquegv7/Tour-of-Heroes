@@ -1,15 +1,38 @@
 <h2>My Heroes </h2>
-<div>
-  <label for="new-hero">Hero name: </label>
-  <input id="new-hero" #heroName />
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
-    Add hero
-  </button>
+<div class="container">
+  <div [hidden]="submitted">
+    <h1>Hero Form</h1>
+    <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name"
+               required
+               [(ngModel)]="newHero.name" name="name"
+               #name="ngModel">
+        <div [hidden]="name.valid"
+             class="alert alert-danger">
+          Name is required
+        </div>
+      </div>
+      <button type="submit" class="btn btn-success" [disabled]="!heroForm.form.valid">Submit</button>
+      <button type="button" class="btn btn-default" [disabled]="!heroForm.form.valid" (click)="onClickAddHero(); heroForm.reset()">New Hero</button>
+    </form>
+  </div>s
 </div>
+<!-- <div>
+  <span>CREAR HEROE</span>
+  <form id="heroesCreateForm" name="heroesCreateForm">
+    <label for="new-hero">Hero name: </label>
+    <input id="new-hero" name="new-hero" [(ngModel)]="newHero.name"/>
+    <button type="button"  class="add-button" (click)="onClickAddHero()">
+      Add hero
+    </button>
+  </form>
+</div> -->
 <div>
   <ul class="heroes">
     <li *ngFor="let hero of heroes">
-      <a routerLink="/detail/{{hero.id}}">
+      <a routerLink="/heroes/detail/{{hero.id}}">
           <span class="badge">{{hero.id}}</span>
           <span class="name">{{hero.name}}</span>-
           <app-hero-type [typeId]="hero.typeId"></app-hero-type>
