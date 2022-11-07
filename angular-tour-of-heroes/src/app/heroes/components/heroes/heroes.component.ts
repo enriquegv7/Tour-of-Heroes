@@ -29,12 +29,6 @@ export class HeroesComponent implements OnInit {
     private formBuilder: FormBuilder
     ) { }
 
-  checkoutForm = this.formBuilder.group(
-    {
-      name: ['', Validators.required],
-    }
-  );
-
   ngOnInit() {
     // this.getUsers();
     // this.getUsersPromise();
@@ -85,7 +79,7 @@ export class HeroesComponent implements OnInit {
 
   onSubmitHero(): void{
     this.add(this.newHero.name);
-    this.createHeroForm.reset();
+    this.createHeroForm.resetForm();
   }
 
 }
