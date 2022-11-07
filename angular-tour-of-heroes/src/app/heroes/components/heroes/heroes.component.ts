@@ -1,13 +1,12 @@
-import { Component, OnInit, TypeProvider } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { HeroService } from 'src/app/shared/services/hero.service';
 import { MessageService } from 'src/app/shared/services/message.service';
 import { Hero } from '../../models/hero.model';
-import { HEROES } from '../../../shared/mocks/mock-heroes';
 import { User } from '../../models/user.model';
 import { UserService } from '../../../shared/services/user.service';
 import { heroTypeNames } from '../../constants/hero.constants';
-import { FormBuilder, Validators } from '@angular/forms';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-heroes',
@@ -15,8 +14,9 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
   styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
+  @ViewChild('createHeroForm') createHeroForm: NgForm;
+
   heroes: Hero[] = [];
-  // selectedHero: Hero;
   name = 'hero';
   users: User[];
   newHero = new Hero();
@@ -83,13 +83,9 @@ export class HeroesComponent implements OnInit {
     this.heroService.deleteHero(hero.id).subscribe();
   }
 
-  onClickAddHero(): void{
+  onSubmitHero(): void{
     this.add(this.newHero.name);
-    this.newHero.name = '';
+    this.createHeroForm.reset();
   }
-
-  onSubmit() { this.submitted = true; }
-
-  
 
 }
