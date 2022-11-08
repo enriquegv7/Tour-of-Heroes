@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
-import { HeroesComponent } from './components/heroes/heroes.component';
+import { HeroesComponent } from './components/heroes/heroes-page.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'list', pathMatch: 'full'},

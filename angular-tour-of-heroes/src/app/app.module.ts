@@ -7,7 +7,7 @@ import { InMemoryDataService } from './shared/mocks/in-memory-data.service';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeroesComponent } from './heroes/components/heroes/heroes.component';
+import { HeroesComponent } from './heroes/components/heroes/heroes-page.component';
 import { HeroDetailComponent } from './heroes/components/hero-detail/hero-detail.component';
 import { LabelComponent } from './heroes/components/label/label.component';
 import { CommonModule } from '@angular/common';
