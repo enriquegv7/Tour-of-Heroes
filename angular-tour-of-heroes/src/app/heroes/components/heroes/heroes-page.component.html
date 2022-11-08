@@ -9,26 +9,46 @@
       </form>
     </div>
   </p-dialog>
-  <button type="button" (click)="showPopUp()" icon="pi pi-times" label="Show">Add hero</button>
+  <button type="button" (click)="showPopUp()" label="Show">Add hero</button>
 </div>
 <div>
-  <ul class="heroes">
+  <!-- <ul class="heroes">
     <li *ngFor="let hero of heroes">
       <a routerLink="/heroes/detail/{{hero.id}}">
         <span class="badge">{{hero.id}}</span>
         <span class="name">{{hero.name}}</span>-
         <app-hero-type [typeId]="hero.typeId"></app-hero-type>
-        <!-- <app-label [(text)]="hero.name"></app-label> -->
+        <app-label [(text)]="hero.name"></app-label>
       </a>
       <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
     </li>
-  </ul>
-  <ul class="heroes">
-    <li *ngFor="let user of users">
-      <!-- <app-label [(text)]="user.name"></app-label> -->
-      <span>{{user.name}}</span>
-      <div>{{user.id}}</div>
-      <div>{{user.phone}}</div>
-    </li>
-  </ul>
+  </ul> -->
+  <div class="heroes">
+    <div class="container-fluid">
+      <div class="row">
+        <li *ngFor="let hero of heroes" class="col-sm-12 col-md-6 col-lg-3">
+          <a routerLink="/heroes/detail/{{hero.id}}">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+            <span *ngIf="hero.typeId"> - </span>
+            <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+            <app-label [(text)]="hero.name"></app-label>
+          </a>
+          <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+        </li>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <div class="row">
+        <li *ngFor="let user of users"  class="col-sm-12 col-md-6 col-lg-3">
+          <a>
+            <span>{{user.name}}</span>
+            <div>{{user.id}}</div>
+            <div>{{user.phone}}</div>
+          </a>
+        </li>
+    </div>
+  </div>
 </div>
+

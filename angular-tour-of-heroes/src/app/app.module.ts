@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HeroesModule } from './heroes/heroes.module';
 import { AccordionModule } from 'primeng/accordion';
 import { DialogModule } from 'primeng/dialog';  
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';      
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';     
 
 
 
