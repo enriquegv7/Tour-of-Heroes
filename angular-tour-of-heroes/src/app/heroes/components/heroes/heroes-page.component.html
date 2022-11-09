@@ -1,54 +1,41 @@
-<h2>My Heroes </h2>
-<div>
-  <p-dialog header="Añadir Nuevo Heroe" [(visible)]="display" [modal]="true" [transitionOptions]="'0ms'">
+<div class="heroes-page">
+    <h2>My Heroes </h2>
     <div>
-      <form id="heroesCreateForm" name="heroesCreateForm" #createHeroForm="ngForm" (ngSubmit)="onSubmitHero()">
-        <label for="new-hero">Hero name : </label>
-        <input id="new-hero" name="new-hero" required [(ngModel)]="newHero.name" />
-        <button type="submit" class="add-button" [disabled] = "createHeroForm.invalid">Add hero</button>
-      </form>
+    <p-dialog header="Añadir Nuevo Heroe" [(visible)]="display" [modal]="true" [transitionOptions]="'0ms'">
+      <div>
+        <form id="heroesCreateForm" name="heroesCreateForm" #createHeroForm="ngForm" (ngSubmit)="onSubmitHero()">
+          <label for="new-hero">Hero name : </label>
+          <input id="new-hero" name="new-hero" required [(ngModel)]="newHero.name" />
+          <button type="submit" class="add-button" [disabled] = "createHeroForm.invalid">Add hero</button>
+        </form>
+      </div>
+    </p-dialog>
+    <button type="button" (click)="showPopUp()" label="Show">Add hero</button>
     </div>
-  </p-dialog>
-  <button type="button" (click)="showPopUp()" label="Show">Add hero</button>
-</div>
-<div>
-  <!-- <ul class="heroes">
-    <li *ngFor="let hero of heroes">
-      <a routerLink="/heroes/detail/{{hero.id}}">
-        <span class="badge">{{hero.id}}</span>
-        <span class="name">{{hero.name}}</span>-
-        <app-hero-type [typeId]="hero.typeId"></app-hero-type>
-        <app-label [(text)]="hero.name"></app-label>
-      </a>
-      <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
-    </li>
-  </ul> -->
-  <div class="heroes">
+    <div class="heroes-page_container">
+        <div class="heroes-page_container_row row">
+          <div *ngFor="let hero of heroes" class="heroes-page_container_row_col col-12 col-md-6 col-lg-3">
+            <div class="heroes-page_container_row_col_card" routerLink="/heroes/detail/{{hero.id}}">
+              <span class="heroes-page_container_row_col_card_badge">{{hero.id}}</span>
+              <span class="heroes-page_container_row_col_card_name">{{hero.name}}</span>
+              <span *ngIf="hero.typeId"> - </span>
+              <app-hero-type [typeId]="hero.typeId"></app-hero-type>
+              <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
+            </div> 
+          </div>
+        </div>
+    </div>
+    <h2>My Users </h2>
     <div class="container-fluid">
       <div class="row">
-        <li *ngFor="let hero of heroes" class="col-sm-12 col-md-6 col-lg-3">
-          <a routerLink="/heroes/detail/{{hero.id}}">
-            <span class="badge">{{hero.id}}</span>
-            <span class="name">{{hero.name}}</span>
-            <span *ngIf="hero.typeId"> - </span>
-            <app-hero-type [typeId]="hero.typeId"></app-hero-type>
-            <app-label [(text)]="hero.name"></app-label>
-          </a>
-          <button type="button" class="delete" title="delete hero" (click)="delete(hero)">x</button>
-        </li>
+          <li *ngFor="let user of users"  class="col-12 col-md-6 col-lg-3">
+            <a>
+              <span>{{user.name}}</span>
+              <div>{{user.id}}</div>
+              <div>{{user.phone}}</div>
+            </a>
+          </li>
       </div>
     </div>
-  </div>
-  <div class="container-fluid">
-    <div class="row">
-        <li *ngFor="let user of users"  class="col-sm-12 col-md-6 col-lg-3">
-          <a>
-            <span>{{user.name}}</span>
-            <div>{{user.id}}</div>
-            <div>{{user.phone}}</div>
-          </a>
-        </li>
-    </div>
-  </div>
 </div>
 
