@@ -1,6 +1,20 @@
 :root {
   --base-color-1: 208, 80%;
+  --base-color-2: 210, 20%;
+  --base-color-3: 123, 43%;
+  --base-color-4: 1, 43%;
+  //Basics
+  --color-black: hsl(208, 80%, 0%);
+  --color-white: hsl(208, 80%, 100%);
+  --color-grey: hsl(0, 0%, 69%);
+  //Cards
   --color-1: hsl(var(--base-color-1), 80%);
   --color-1-dark: hsl(var(--base-color-1), 60%);
-
+  //Headers
+  --color-2: hsl(var(--base-color-2), 31%);  
+  //Correct & Incorrect
+  --color-3: hsl(var(--base-color-3), 46%);
+  --color-3-light: hsl(var(--base-color-3), 76%);
+  --color-4: hsl(var(--base-color-4), 46%);
+  --color-4-light: hsl(var(--base-color-4), 76%);
 }

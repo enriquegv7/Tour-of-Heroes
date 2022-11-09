@@ -1,6 +1,6 @@
 /* HeroDetailComponent's private CSS styles */
 label {
-  color: #435960;
+  color: var(--color-2);
   font-weight: bold;
 }
 input {
@@ -10,16 +10,16 @@ input {
 button {
   margin-top: 20px;
   margin-right: .5rem;
-  background-color: #eee;
+  background-color: var(--color-grey);
   padding: 1rem;
   border-radius: 4px;
   font-size: 1rem;
 }
 button:hover {
-  background-color: #cfd8dc;
+  background-color: var(--color-2);
 }
 button:disabled {
-  background-color: #eee;
-  color: #ccc;
+  background-color: var(--color-white);
+  color: var(--color-grey);
   cursor: auto;
 }

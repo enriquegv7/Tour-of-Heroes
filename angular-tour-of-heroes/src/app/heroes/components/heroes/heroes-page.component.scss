@@ -11,7 +11,7 @@
 
         &_card {
           display: flex;
-          color: black;
+          color: var(--color-black);
           text-decoration: none;
           background-color: var(--color-1);
           margin: .5em;
@@ -22,8 +22,8 @@
 
           &_badge {
             display: flex;
-            color: white;
-            background-color: #405061;
+            color: var(--color-white);
+            background-color: var(--color-2);
             border-radius: 4px 4px 4px 4px;
           }
 
@@ -32,13 +32,13 @@
           }
 
           &:hover {
-            color: #ffffff;
+            color: var(--color-white);
             background-color:var(--color-1-dark);
           }
 
           &:active {
             background-color: var(--color-1-dark);
-            color: black;
+            color: var(--color-black);
           }
         }
 
@@ -57,33 +57,30 @@
 }
 
 .add-button:hover {
-  color: white;
-  background-color: #42545C;
+  color: var(--color-white);
+  background-color: var(--color-2);
 }
 
 button.delete {
   position: absolute;
   right: 1em;
   top: .55em;
-  background-color: #525252;
-  color: white;
+  background-color: var(--color-2);
+  color: var(--color-white);
   font-size: 1.1rem;
   margin: 0;
   padding: 5px 5px 5px 5px;
-  border-color: #333;
 }
 
 button.delete:hover {
-  background-color: black;
-  color: white;
+  background-color: var(--color-black);
+  color: var(--color-white);
 }
 
 .ng-valid:enabled {
-  border: 2px solid #42A948;
-  /* green */
+  border: 2px solid var(--color-3);
 }
 
 .ng-invalid:enabled {
-  border: 2px solid #a94442;
-  /* red */
+  border: 2px solid var(--color-4);
 }

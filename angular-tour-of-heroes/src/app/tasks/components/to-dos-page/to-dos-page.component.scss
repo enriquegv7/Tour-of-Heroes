@@ -10,14 +10,14 @@
     height: 100px;
     padding: 15px;
     box-sizing: border-box;
-    background-color: rgb(255, 198, 198);
-    color: black;
+    background-color: var(--color-4-light);
+    color: var(--color-black);
     border-style: solid;
-    border-color: black;
+    border-color: var(--color-black);
     border-width: 0.5px;
     cursor: pointer;
     &_completed {
-      background-color: rgb(217, 255, 217);
+      background-color: var(--color-3-light);
     }
     &_style {
       display: flex;

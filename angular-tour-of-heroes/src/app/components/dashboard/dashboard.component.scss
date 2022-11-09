@@ -23,13 +23,13 @@ h2 {
 }
 
 a {
-  background-color: #3f525c;
+  background-color: var(--color-2);
   border-radius: 2px;
   padding: 1rem;
   font-size: 1.2rem;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: var(--color-white);
   text-align: center;
   width: 100%;
   min-width: 70px;
@@ -50,5 +50,5 @@ a {
 }
 
 a:hover {
-  background-color: black;
+  background-color: var(--color-black);
 }
